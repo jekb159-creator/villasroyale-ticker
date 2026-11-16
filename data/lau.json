@@ -1,0 +1,82 @@
+{
+ "_comment": "Monatsraten fuer das LAU-Laufband (M5b). Wird von der naechtlichen Aufgabe 'Laufband LAU' aktualisiert, siehe RUNBOOK.md.",
+ "config": {
+  "discount_factor": 0.75,
+  "round_to": 10,
+  "year": 2027,
+  "max_rate_items": 5,
+  "min_rate_items": 2,
+  "closed_from": {
+   "Rex": "2027-01-12"
+  },
+  "listing_ids": {
+   "Leon": "69e73a3dd887ed0014e77214",
+   "Trespalomas": "69e8ad355877dd0011dbf552",
+   "Rex": "69e8b563efd457001439d13d",
+   "Silvermoon": "69e8b9a4705a0c00128bce3f",
+   "Diamante": "69e8bddb1141000013d4193a"
+  },
+  "lau_candidates": [
+   [
+    "September",
+    "Leon"
+   ],
+   [
+    "June",
+    "Diamante"
+   ],
+   [
+    "September",
+    "Silvermoon"
+   ],
+   [
+    "June",
+    "Trespalomas"
+   ],
+   [
+    "June",
+    "Leon"
+   ],
+   [
+    "October",
+    "Leon"
+   ],
+   [
+    "June",
+    "Silvermoon"
+   ],
+   [
+    "September",
+    "Diamante"
+   ],
+   [
+    "September",
+    "Trespalomas"
+   ],
+   [
+    "October",
+    "Silvermoon"
+   ]
+  ]
+ },
+ "rates": [
+  {
+   "month": "June",
+   "villa": "Diamante",
+   "eur": 13820,
+   "read": "2026-11-15"
+  },
+  {
+   "month": "September",
+   "villa": "Silvermoon",
+   "eur": 11290,
+   "read": "2026-11-15"
+  },
+  {
+   "month": "June",
+   "villa": "Trespalomas",
+   "eur": 10680,
+   "read": "2026-11-15"
+  }
+ ]
+}
