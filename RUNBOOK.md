@@ -8,7 +8,7 @@ Zwei Laufbänder (fixe Leiste am unteren Rand der Carrd-Seiten, nicht klickbar):
 | M5b | LAU | Monatsraten-Beispiele 2027, „not an offer“ | `feed-lau.json` | `data/lau.json` | **Laufband LAU** – läuft in der Cloud (PriceLabs) |
 
 Die Carrd-Seiten laden beim Aufruf den Feed (`https://raw.githubusercontent.com/jekb159-creator/villasroyale-ticker/main/feed-*.json`). Carrd muss für neue Werte **nicht** neu veröffentlicht werden.
-Schutz auf der Seite: Feed älter als 72 h (LAU) bzw. 14 Tage (VV) → Leiste wird ausgeblendet; Feed nicht erreichbar → statischer Fallback höchstens 7 (LAU) bzw. 21 Tage (VV) nach Einbau, danach ausgeblendet. Es werden nie veraltete Zahlen angezeigt.
+Schutz auf der Seite (für beide Bänder gleich): Feed älter als 30 Tage → Leiste wird ausgeblendet; Feed nicht erreichbar → statischer Fallback höchstens 30 Tage ab Erzeugungsdatum der Embeds, danach ausgeblendet. Eingestellt in `scripts/ticker.py` (`MAX_AGE_H`, `FALLBACK_DAYS`). Die Leiste kann also bis zu 30 Tage alte Zahlen zeigen, wenn die nächtlichen Aufgaben ausfallen.
 
 ## Grundregeln für beide Aufgaben
 - Zuerst `git pull --rebase`. Nur die eigene Datei ändern (`data/vv.json` bzw. `data/lau.json`), dann `python3 scripts/ticker.py feed vv|lau`.
@@ -32,7 +32,7 @@ Regel (M5a): Werte exakt wie auf der öffentlichen Seite angezeigt (Booking.com 
 1. `data/vv.json` lesen. Seiten: Airbnb `https://www.airbnb.com/rooms/<config.airbnb_room_ids[Villa]>`; Booking über `config.booking_urls[Villa]`, falls leer: Booking-Suche nach „VillasRoyale <Villa>“, Treffer mit passender Property-ID (`config.booking_property_ids`) prüfen und die gefundene URL in `config.booking_urls` eintragen.
 2. Bewertung je Eintrag lesen und in `ratings` ändern (`value` als Text wie angezeigt, `read` = heute). Nicht lesbare Seite → alter Wert und altes `read` bleiben, melden.
 3. Eine Villa mit `closed_from` ≤ heute wird vom Skript automatisch ausgelassen (Rex ab 12.01.2027).
-4. Feed bauen, prüfen, pushen (Grundregeln). Ist der Rechner/Browser nicht erreichbar → nichts tun und das melden (der Feed bleibt bis zu 14 Tage gültig).
+4. Feed bauen, prüfen, pushen (Grundregeln). Ist der Rechner/Browser nicht erreichbar → nichts tun und das melden (der Feed bleibt bis zu 30 Tage gültig).
 
 ## Carrd-Embeds neu erzeugen (nur bei Änderung von Design/Text)
 `python3 scripts/ticker.py embeds --base https://raw.githubusercontent.com/jekb159-creator/villasroyale-ticker/main/` → `carrd/embed-vv.html` (VV-Seite) und `carrd/embed-lau.html` (LAU-Seite). Inhalt in das jeweilige Embed („Ticker …“, versteckt, Body-Ende) einsetzen und im Carrd-Entwurf speichern.

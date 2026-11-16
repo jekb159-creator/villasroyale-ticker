@@ -16,6 +16,7 @@ NAME = {"Leon": "Léon"}            # Anzeigename
 MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 SCALE = {"Booking.com": 10, "Airbnb": 5}
 MAX_RATING_DELTA, MAX_RATE_DELTA = 0.4, 0.30
+MAX_AGE_H, FALLBACK_DAYS = 720, 30   # Ausblenden: Feed aelter als 30 Tage (720 h) bzw. statischer Fallback aelter als 30 Tage
 BUILT_DATE = None  # wird beim Erzeugen der Embeds gesetzt
 
 def nm(v): return NAME.get(v, v)
@@ -165,9 +166,9 @@ def cmd_embeds(base):
     (ROOT / "carrd").mkdir(exist_ok=True)
     c = "<!-- VillasRoyale %s. Daten: %s (taeglich ca. 23:00 aktualisiert). Statischer Inhalt = Fallback; Feed aelter als %s h oder Fallback aelter als %d Tage blendet die Leiste aus. -->"
     feed = json.loads(FEED["vv"].read_text(encoding="utf-8")); url = base + "feed-vv.json"
-    (ROOT / "carrd" / "embed-vv.html").write_text(embed("vv", feed, url, "Enjoy the Best!", "Guest ratings on Booking.com (scale 10) and Airbnb (scale 5)", c % ("M5a Laufband VV", url, 336, 21), 336, 21), encoding="utf-8")
+    (ROOT / "carrd" / "embed-vv.html").write_text(embed("vv", feed, url, "Enjoy the Best!", "Guest ratings on Booking.com (scale 10) and Airbnb (scale 5)", c % ("M5a Laufband VV", url, MAX_AGE_H, FALLBACK_DAYS), MAX_AGE_H, FALLBACK_DAYS), encoding="utf-8")
     feed = json.loads(FEED["lau"].read_text(encoding="utf-8")); url = base + "feed-lau.json"
-    (ROOT / "carrd" / "embed-lau.html").write_text(embed("lau", feed, url, None, "Seasonal rental: monthly rate examples", c % ("M5b Laufband LAU", url, 72, 7), 72, 7), encoding="utf-8")
+    (ROOT / "carrd" / "embed-lau.html").write_text(embed("lau", feed, url, None, "Seasonal rental: monthly rate examples", c % ("M5b Laufband LAU", url, MAX_AGE_H, FALLBACK_DAYS), MAX_AGE_H, FALLBACK_DAYS), encoding="utf-8")
     print("embeds geschrieben fuer", base)
 
 if __name__ == "__main__":

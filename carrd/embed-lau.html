@@ -1,4 +1,4 @@
-<!-- VillasRoyale M5b Laufband LAU. Daten: https://raw.githubusercontent.com/jekb159-creator/villasroyale-ticker/main/feed-lau.json (taeglich ca. 23:00 aktualisiert). Statischer Inhalt = Fallback; Feed aelter als 72 h oder Fallback aelter als 7 Tage blendet die Leiste aus. -->
+<!-- VillasRoyale M5b Laufband LAU. Daten: https://raw.githubusercontent.com/jekb159-creator/villasroyale-ticker/main/feed-lau.json (taeglich ca. 23:00 aktualisiert). Statischer Inhalt = Fallback; Feed aelter als 720 h oder Fallback aelter als 30 Tage blendet die Leiste aus. -->
 <style>
 #vr-ticker{position:fixed;left:0;right:0;bottom:0;height:40px;z-index:9990;display:flex;align-items:center;background:#2C3220;color:#F4EFE6;border-top:1px solid rgba(255,255,255,.10);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;pointer-events:none;-webkit-user-select:none;user-select:none}
 #vr-ticker .vr-brand{flex:none;height:100%;display:flex;align-items:center;padding:0 18px 0 20px;font-family:"Playfair Display",Georgia,serif;font-size:16px;font-weight:600;letter-spacing:.01em;color:#fff;white-space:nowrap;position:relative;z-index:2;background:#2C3220}
@@ -24,7 +24,7 @@ body{padding-bottom:40px}
 </div>
 <script>
 (function(){
-var U="https://raw.githubusercontent.com/jekb159-creator/villasroyale-ticker/main/feed-lau.json",BUILT="2026-11-16",MAXH=72,FB=7;
+var U="https://raw.githubusercontent.com/jekb159-creator/villasroyale-ticker/main/feed-lau.json",BUILT="2026-11-16",MAXH=720,FB=30;
 var el=document.getElementById("vr-ticker"),tr=el&&el.querySelector(".vr-track");if(!tr)return;
 function hide(){el.style.display="none";document.body.style.paddingBottom="0"}
 function node(s){var sp=document.createElement("span");sp.className="vr-i";
