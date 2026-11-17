@@ -3,7 +3,7 @@
  "config": {
   "min_rating_items": 4,
   "closed_from": {
-   "Rex": "2027-03-29"
+   "Rex": "2027-03-31"
   },
   "airbnb_room_ids": {
    "Leon": "1609276429685634043",
