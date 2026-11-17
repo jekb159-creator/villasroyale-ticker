@@ -20,7 +20,11 @@
    "Diamante": 11070004
   },
   "booking_urls": {
-   "Leon": "https://www.booking.com/hotel/es/villasroyale-leon-the-royal-lion.html"
+   "Leon": "https://www.booking.com/hotel/es/villasroyale-leon-the-royal-lion.html",
+   "Trespalomas": "https://www.booking.com/hotel/es/21-calle-mar-de-escocia.html",
+   "Rex": "https://www.booking.com/hotel/es/villa-royale-rex-has-got-it-all.html",
+   "Silvermoon": "https://www.booking.com/hotel/es/villa-royale-silvermoon.html",
+   "Diamante": "https://www.booking.com/hotel/es/villa-royale-diamante.html"
   }
  },
  "ratings": [
@@ -28,55 +32,55 @@
    "platform": "Booking.com",
    "villa": "Trespalomas",
    "value": "9.3",
-   "read": "2026-11-15"
+   "read": "2026-11-17"
   },
   {
    "platform": "Booking.com",
    "villa": "Rex",
-   "value": "9.5",
-   "read": "2026-11-15"
+   "value": "9.6",
+   "read": "2026-11-17"
   },
   {
    "platform": "Booking.com",
    "villa": "Leon",
    "value": "10",
-   "read": "2026-11-15"
+   "read": "2026-11-17"
   },
   {
    "platform": "Booking.com",
    "villa": "Silvermoon",
    "value": "9.4",
-   "read": "2026-11-15"
+   "read": "2026-11-17"
   },
   {
    "platform": "Booking.com",
    "villa": "Diamante",
    "value": "9.4",
-   "read": "2026-11-15"
+   "read": "2026-11-17"
   },
   {
    "platform": "Airbnb",
    "villa": "Trespalomas",
    "value": "4.86",
-   "read": "2026-11-15"
+   "read": "2026-11-17"
   },
   {
    "platform": "Airbnb",
    "villa": "Rex",
    "value": "4.9",
-   "read": "2026-11-15"
+   "read": "2026-11-17"
   },
   {
    "platform": "Airbnb",
    "villa": "Silvermoon",
    "value": "4.93",
-   "read": "2026-11-15"
+   "read": "2026-11-17"
   },
   {
    "platform": "Airbnb",
    "villa": "Diamante",
    "value": "5.0",
-   "read": "2026-11-15"
+   "read": "2026-11-17"
   }
  ]
 }
