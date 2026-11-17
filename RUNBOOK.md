@@ -22,7 +22,7 @@ Regel (Parameterliste M5b/M6): Monatsrate = Summe der PriceLabs-Tagespreise (`pr
 1. `data/lau.json` lesen. `config.lau_candidates` ist die Prioritätenliste (Monat, Villa); `config.listing_ids` die Guesty-IDs (`pms_name` = `guesty`).
 2. Für jeden Kandidaten in Reihenfolge, bis `max_rate_items` Raten vorliegen: `get_listing_prices(listing_id, "guesty", 1. des Monats, letzter des Monats)`.
    - Ist **irgendein Tag** nicht frei (`user_price == -1`, also gebucht oder blockiert) → Kandidat überspringen (kein Monatsbeispiel für einen belegten Monat).
-   - Villa mit `config.closed_from` (Rex ab 2027-01-12): Monate ab diesem Datum nicht verwenden.
+   - Villa mit `config.closed_from` (Rex ab 2027-03-29, Tag nach Ostersonntag, d. h. offen bis einschließlich Semana Santa): Monate ab diesem Datum nicht verwenden.
    - Summe der `price` aller Tage berechnen (Python/Bash, Anzahl Tage gegenprüfen), × 0.75, auf 10 runden.
 3. `rates` in `data/lau.json` neu schreiben (`{"month","villa","eur","read":"YYYY-MM-DD"}`, in Prioritätenreihenfolge). Weniger als `min_rate_items` verfügbar → nichts ändern, melden.
 4. Feed bauen, prüfen, pushen (Grundregeln).
@@ -31,7 +31,7 @@ Regel (Parameterliste M5b/M6): Monatsrate = Summe der PriceLabs-Tagespreise (`pr
 Regel (M5a): Werte exakt wie auf der öffentlichen Seite angezeigt (Booking.com „Scored x“ von 10, Airbnb Sterne x von 5). Airbnb-Villa ohne angezeigte Bewertung → nicht aufnehmen.
 1. `data/vv.json` lesen. Seiten: Airbnb `https://www.airbnb.com/rooms/<config.airbnb_room_ids[Villa]>`; Booking über `config.booking_urls[Villa]`, falls leer: Booking-Suche nach „VillasRoyale <Villa>“, Treffer mit passender Property-ID (`config.booking_property_ids`) prüfen und die gefundene URL in `config.booking_urls` eintragen.
 2. Bewertung je Eintrag lesen und in `ratings` ändern (`value` als Text wie angezeigt, `read` = heute). Nicht lesbare Seite → alter Wert und altes `read` bleiben, melden.
-3. Eine Villa mit `closed_from` ≤ heute wird vom Skript automatisch ausgelassen (Rex ab 12.01.2027).
+3. Eine Villa mit `closed_from` ≤ heute wird vom Skript automatisch ausgelassen (Rex ab 29.03.2027).
 4. Feed bauen, prüfen, pushen (Grundregeln). Ist der Rechner/Browser nicht erreichbar → nichts tun und das melden (der Feed bleibt bis zu 30 Tage gültig).
 
 ## Carrd-Embeds neu erzeugen (nur bei Änderung von Design/Text)
