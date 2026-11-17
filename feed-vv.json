@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "updated": "2026-11-17T07:46:00Z",
+ "updated": "2026-11-17T22:42:25Z",
  "items": [
   "*Booking.com*|Trespalomas|^9.3/10^",
   "*Booking.com*|Rex|^9.6/10^",
@@ -9,6 +9,7 @@
   "*Booking.com*|Diamante|^9.4/10^",
   "*Airbnb*|Trespalomas|^4.86/5^",
   "*Airbnb*|Rex|^4.9/5^",
+  "*Airbnb*|Léon|^4.0/5^",
   "*Airbnb*|Silvermoon|^4.93/5^",
   "*Airbnb*|Diamante|^5.0/5^"
  ]

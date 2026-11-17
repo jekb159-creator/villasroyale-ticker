@@ -72,6 +72,12 @@
   },
   {
    "platform": "Airbnb",
+   "villa": "Leon",
+   "value": "4.0",
+   "read": "2026-11-17"
+  },
+  {
+   "platform": "Airbnb",
    "villa": "Silvermoon",
    "value": "4.93",
    "read": "2026-11-17"
